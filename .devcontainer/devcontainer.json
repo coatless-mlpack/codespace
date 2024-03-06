@@ -1,0 +1,23 @@
+{
+	"name": "mlpack C++ Dev Container",
+	"build": {
+		"dockerfile": "Dockerfile",
+	},
+	// Configure tool-specific properties.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			"settings": {},
+			"extensions": [
+				"twxs.cmake",
+				"ms-vscode.cpptools",
+				"ms-vscode.cmake-tools",
+				"llvm-vs-code-extensions.vscode-clangd"
+			]
+		}
+	}
+
+	// Switch to using root as a remote user
+	// details: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
