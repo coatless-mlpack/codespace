@@ -42,9 +42,9 @@ RUN apt-get clean -y && rm -rf \
     armadillo* \
     ensmallen*
 
-## Attempt to update python packages
-RUN pip3 --no-cache-dir install --upgrade --ignore-installed cython numpy \
-    pandas setuptools
+## Disable python update as worker exceeds space
+#RUN pip3 --no-cache-dir install --upgrade --ignore-installed cython numpy \
+#    pandas setuptools
 
 # Setup environment.
 ENV LD_LIBRARY_PATH /usr/local/lib
