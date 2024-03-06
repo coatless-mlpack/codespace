@@ -17,9 +17,7 @@ RUN apt-get update -qq && apt-get install -y --no-install-recommends \
     libarpack2 \
     libsuperlu-dev \
     libstb-dev && \
-    apt-get clean && rm -rf /var/lib/apt/lists/* && \
-    pip3 --no-cache-dir install --upgrade --ignore-installed cython numpy \
-    pandas setuptools
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
 ## Install armadillo.
 RUN curl -Lk https://files.mlpack.org/armadillo-11.4.1.tar.gz | tar -xvz && \
@@ -43,6 +41,10 @@ RUN wget http://ensmallen.org/files/ensmallen-2.19.0.tar.gz && \
 RUN apt-get clean -y && rm -rf \
     armadillo* \
     ensmallen*
+
+## Attempt to update python packages
+RUN pip3 --no-cache-dir install --upgrade --ignore-installed cython numpy \
+    pandas setuptools
 
 # Setup environment.
 ENV LD_LIBRARY_PATH /usr/local/lib
