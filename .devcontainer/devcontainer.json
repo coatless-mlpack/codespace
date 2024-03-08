@@ -1,8 +1,6 @@
 {
 	"name": "mlpack C++ Dev Container",
-	"build": {
-		"dockerfile": "Dockerfile",
-	},
+	"image": "jamesbalamuta/mlpack-codespace:latest",
 	// Configure tool-specific properties.
 	"customizations": {
 		// Configure properties specific to VS Code.
